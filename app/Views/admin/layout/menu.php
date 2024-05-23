@@ -15,7 +15,7 @@ $session     = \Config\Services::session();
   <!-- Brand Logo -->
   <a href="" class="brand-link">
     <img src="<?= base_url('assets/upload/image/Logo Unand.png') ?>" alt="Admin Logo" class="brand-image img-circle elevation-3" ">
-    <span class=" brand-text font-weight-light">Website</span>
+    <span class=" brand-text font-weight-light">Laporan Kerusakan</span>
   </a>
 
   <!-- Sidebar -->
@@ -133,7 +133,7 @@ $session     = \Config\Services::session();
         <!-- Video -->
         <li class="nav-item">
           <a href="<?= base_url('admin/video') ?>" class="nav-link">
-            <i class="nav-icon fab fa-person"></i>
+            <i class="nav-icon fas fa-tags"></i>
             <p>Penanggung Jawab Gedung</p>
           </a>
           <!-- <ul class="nav nav-treeview">
