@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'kumandra',
+        'database' => 'db_kumandra',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
