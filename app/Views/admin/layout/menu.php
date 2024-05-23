@@ -7,13 +7,13 @@ $session     = \Config\Services::session();
 ?>
 <style type="text/css" media="screen">
   .nav-item a:hover {
-    color: yellow !important;
+    color: greenyellow !important;
   }
 </style>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
+  <a href="" class="brand-link">
     <img src="<?= base_url('assets/upload/image/Logo Unand.png') ?>" alt="Admin Logo" class="brand-image img-circle elevation-3" ">
     <span class=" brand-text font-weight-light">Website</span>
   </a>
@@ -131,14 +131,12 @@ $session     = \Config\Services::session();
         </li> -->
 
         <!-- Video -->
-        <!-- <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fab fa-youtube"></i>
-            <p>Data Video Youtube
-              <i class="fas fa-angle-left right"></i>
-            </p>
+        <li class="nav-item">
+          <a href="<?= base_url('admin/video') ?>" class="nav-link">
+            <i class="nav-icon fab fa-person"></i>
+            <p>Penanggung Jawab Gedung</p>
           </a>
-          <ul class="nav nav-treeview">
+          <!-- <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="<?= base_url('admin/video') ?>" class="nav-link">
                 <i class="fas fa-table nav-icon"></i>
@@ -151,8 +149,8 @@ $session     = \Config\Services::session();
                 <p>Tambah Video Youtube</p>
               </a>
             </li>
-          </ul>
-        </li> -->
+          </ul> -->
+        </li>
 
         <!-- pengguna -->
         <li class="nav-item">
