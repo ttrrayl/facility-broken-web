@@ -5,7 +5,7 @@ echo csrf_field();
 <div class="form-group row">
 	<label class="col-3">Nama pj</label>
 	<div class="col-9">
-		<input type="text" name="judul" class="form-control" placeholder="Nama pj" value="<?= $pj['judul'] ?>" required>
+		<input type="text" name="nama" class="form-control" placeholder="Nama pj" value="<?= $pj['nama'] ?>" required>
 	</div>
 </div>
 
@@ -17,12 +17,6 @@ echo csrf_field();
 	</div>
 </div>
 
-<div class="form-group row">
-	<label class="col-3">Keterangan</label>
-	<div class="col-9">
-		<textarea name="keterangan" class="form-control"><?= $pj['keterangan'] ?></textarea>
-	</div>
-</div>
 
 <div class="form-group row">
 	<label class="col-3"></label>

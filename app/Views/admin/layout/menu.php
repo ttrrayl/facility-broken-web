@@ -132,7 +132,7 @@ $session     = \Config\Services::session();
 
         <!-- Video -->
         <li class="nav-item">
-          <a href="<?= base_url('admin/video') ?>" class="nav-link">
+          <a href="<?= base_url('admin/pj') ?>" class="nav-link">
             <i class="nav-icon fas fa-tags"></i>
             <p>Penanggung Jawab Gedung</p>
           </a>

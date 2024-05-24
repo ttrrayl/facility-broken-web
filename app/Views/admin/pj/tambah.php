@@ -20,7 +20,7 @@ echo csrf_field();
 				<div class="form-group row">
 					<label class="col-3">Nama PJ</label>
 					<div class="col-9">
-						<input type="text" name="nama pj" class="form-control" placeholder="Nama pj" value="<?= set_value('nama') ?>" required>
+						<input type="text" name="nama" class="form-control" placeholder="Nama pj" value="<?= set_value('nama') ?>" required>
 					</div>
 				</div>
 
@@ -32,12 +32,7 @@ echo csrf_field();
 					</div>
 				</div>
 
-				<div class="form-group row">
-					<label class="col-3">Keterangan</label>
-					<div class="col-9">
-						<textarea name="keterangan" class="form-control"><?= set_value('keterangan') ?></textarea>
-					</div>
-				</div>
+
 
 			</div>
 			<div class="modal-footer justify-content-between">

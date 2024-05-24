@@ -4,13 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Video_model extends Model
+class pj_model extends Model
 {
-    protected $table              = 'video';
-    protected $primaryKey         = 'id_video';
+    protected $table              = 'pj';
+    protected $primaryKey         = 'id_pj';
     protected $returnType         = 'array';
     protected $useSoftDeletes     = false;
-    protected $allowedFields      = ['id_video', 'judul', 'video', 'keterangan'];
+    protected $allowedFields      = ['id_pj', 'nama', 'contact'];
     protected $useTimestamps      = false;
     protected $createdField       = 'tanggal_post';
     protected $updatedField       = 'tanggal';
@@ -22,8 +22,8 @@ class Video_model extends Model
     // listing
     public function listing()
     {
-        $builder = $this->db->table('video');
-        $builder->orderBy('video.id_video', 'DESC');
+        $builder = $this->db->table('pj');
+        $builder->orderBy('pj.id_pj', 'DESC');
         $query = $builder->get();
 
         return $query->getResultArray();
@@ -32,31 +32,31 @@ class Video_model extends Model
     // total
     public function total()
     {
-        $builder = $this->db->table('video');
+        $builder = $this->db->table('pj');
         $builder->select('COUNT(*) AS total');
-        $builder->orderBy('video.id_video', 'DESC');
+        $builder->orderBy('pj.id_pj', 'DESC');
         $query = $builder->get();
 
         return $query->getRowArray();
     }
 
     // detail
-    public function detail($id_video)
+    public function detail($id_pj)
     {
-        $builder = $this->db->table('video');
-        $builder->where('id_video', $id_video);
-        $builder->orderBy('video.id_video', 'DESC');
+        $builder = $this->db->table('pj');
+        $builder->where('id_pj', $id_pj);
+        $builder->orderBy('pj.id_pj', 'DESC');
         $query = $builder->get();
 
         return $query->getRowArray();
     }
 
     // read
-    public function read($slug_video)
+    public function read($slug_pj)
     {
-        $builder = $this->db->table('video');
-        $builder->where('slug_video', $slug_video);
-        $builder->orderBy('video.id_video', 'DESC');
+        $builder = $this->db->table('pj');
+        $builder->where('slug_pj', $slug_pj);
+        $builder->orderBy('pj.id_pj', 'DESC');
         $query = $builder->get();
 
         return $query->getRowArray();

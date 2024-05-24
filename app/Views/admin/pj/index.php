@@ -18,7 +18,7 @@
 				<td><?= $pj['contact'] ?>
 
 				</td>
-				<td><?= $pj['keterangan'] ?></td>
+
 				<td>
 					<a href="<?= base_url('admin/pj/edit/' . $pj['id_pj']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
 					<a href="<?= base_url('admin/pj/delete/' . $pj['id_pj']) ?>" class="btn btn-red btn-sm" onclick="confirmation(event)"><i class="fa fa-trash"></i></a>

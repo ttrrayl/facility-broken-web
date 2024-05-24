@@ -45,7 +45,7 @@ class Dasbor_model extends Model
     // video
     public function video()
     {
-        $builder = $this->db->table('video');
+        $builder = $this->db->table('pj');
         $query   = $builder->get();
 
         return $query->getNumRows();
