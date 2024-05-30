@@ -8,8 +8,8 @@
 	<thead>
 		<tr>
 			<th width="5%">No</th>
-			<th width="50%">Nama Penanggung Jawab</th>
 			<th width="30%">Nama Gedung Kuliah</th>
+			<th width="50%">Nama Penanggung Jawab</th>
 
 		</tr>
 	</thead>
@@ -19,8 +19,8 @@
 		foreach ($building as $building) { ?>
 			<tr>
 				<td><?= $no ?></td>
-				<td><?= $building['nama_pj'] ?></td>
 				<td><?= $building['nama_building'] ?></td>
+				<td><?= $building['nama_pj'] ?></td>
 
 				<td>
 					<a href="<?= base_url('admin/building/edit/' . $building['id_building']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>

@@ -153,8 +153,29 @@ $session     = \Config\Services::session();
         </li>
 
         <li class="nav-item">
+          <a href="<?= base_url('admin/detail_facilities') ?>" class="nav-link">
+            <i class="nav-icon fas fa-cubes"></i>
+            <p>Fasilitas</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?= base_url('admin/facilities') ?>" class="nav-link">
+            <i class="nav-icon fas fa-shapes"></i>
+            <p>Kategori Fasilitas</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?= base_url('admin/classes') ?>" class="nav-link">
+            <i class="nav-icon fas fa-chalkboard-teacher"></i>
+            <p>Ruang Kelas</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a href="<?= base_url('admin/building') ?>" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fas fa-building"></i>
             <p>Gedung Perkuliahan</p>
           </a>
         </li>
