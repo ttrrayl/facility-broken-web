@@ -75,7 +75,6 @@ class Building extends BaseController
 
             $data = [
                 'id_building'          => $id_building,
-                'id_user'              => $this->session->get('id_user'),
                 'id_pj' => $this->request->getVar('id_pj'),
                 'nama_building'       => $this->request->getVar('nama_building'),
             ];
@@ -85,7 +84,7 @@ class Building extends BaseController
         }
 
         $data = [
-            'title'        => 'Edit Nama Gedung Kuliah: ' . $building['nama'],
+            'title'        => 'Edit Nama Gedung Kuliah: ' . $building['nama_pj'],
             'pj' => $pj,
             'building'          => $building,
             'content'           => 'admin/building/edit',
