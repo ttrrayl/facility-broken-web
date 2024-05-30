@@ -152,6 +152,13 @@ $session     = \Config\Services::session();
           </ul> -->
         </li>
 
+        <li class="nav-item">
+          <a href="<?= base_url('admin/building') ?>" class="nav-link">
+            <i class="nav-icon fas fa-table"></i>
+            <p>Gedung Perkuliahan</p>
+          </a>
+        </li>
+
         <!-- pengguna -->
         <li class="nav-item">
           <a href="<?= base_url('admin/client') ?>" class="nav-link">

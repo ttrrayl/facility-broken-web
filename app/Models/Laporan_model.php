@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class Client_model extends Model
 {
-    protected $table              = 'client';
-    protected $primaryKey         = 'id_client';
+    protected $table              = 'laporan';
+    protected $primaryKey         = 'id_laporan';
     protected $returnType         = 'array';
     protected $useSoftDeletes     = false;
     protected $allowedFields      = [''];
@@ -22,11 +22,23 @@ class Client_model extends Model
     // listing
     public function listing()
     {
-        $builder = $this->db->table('client');
-        $builder->orderBy('client.id_client', 'DESC');
+        $builder = $this->db->table('laporan');
+        $builder->select('berita.*, kategori.nama_kategori, kategori.slug_kategori, users.nama');
+        $builder->join('kategori', 'kategori.id_kategori = berita.id_kategori', 'LEFT');
+        $builder->join('users', 'users.id_user = berita.id_user', 'LEFT');
+        $builder->orderBy('laporan.id_laporan', 'DESC');
         $query = $builder->get();
 
         return $query->getResultArray();
+
+        // $builder = $this->db->table('berita');
+        // $builder->select('berita.*, kategori.nama_kategori, kategori.slug_kategori, users.nama');
+        // $builder->join('kategori', 'kategori.id_kategori = berita.id_kategori', 'LEFT');
+        // $builder->join('users', 'users.id_user = berita.id_user', 'LEFT');
+        // $builder->orderBy('berita.id_berita', 'DESC');
+        // $query = $builder->get();
+
+        // return $query->getResultArray();
     }
 
     // home

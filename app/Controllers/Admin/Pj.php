@@ -17,12 +17,12 @@ class pj extends BaseController
         // Start validasi
         if ($this->request->getMethod() === 'post' && $this->validate(
             [
-                'nama' => 'required',
+                'nama_pj' => 'required',
             ]
         )) {
             // masuk database
             $data = [
-                'nama'        => $this->request->getPost('nama'),
+                'nama_pj'        => $this->request->getPost('nama_pj'),
                 'contact'        => $this->request->getPost('contact'),
                 'tanggal_post' => date('Y-m-d H:i:s'),
             ];
@@ -50,12 +50,12 @@ class pj extends BaseController
         // Start validasi
         if ($this->request->getMethod() === 'post' && $this->validate(
             [
-                'nama' => 'required|min_length[3]',
+                'nama_pj' => 'required|min_length[3]',
             ]
         )) {
             $data = [
                 'id_pj' => $id_pj,
-                'nama'         => $this->request->getPost('nama'),
+                'nama_pj'         => $this->request->getPost('nama_pj'),
                 'contact'         => $this->request->getPost('contact'),
             ];
             $m_pj->update($id_pj, $data);
@@ -65,7 +65,7 @@ class pj extends BaseController
             return redirect()->to(base_url('admin/pj'));
         }
         $data = [
-            'title' => 'Edit PJ: ' . $pj['nama'],
+            'title' => 'Edit PJ: ' . $pj['nama_pj'],
             'pj'      => $pj,
             'content'    => 'admin/pj/edit',
         ];

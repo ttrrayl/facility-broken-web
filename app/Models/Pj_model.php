@@ -10,7 +10,7 @@ class pj_model extends Model
     protected $primaryKey         = 'id_pj';
     protected $returnType         = 'array';
     protected $useSoftDeletes     = false;
-    protected $allowedFields      = ['id_pj', 'nama', 'contact'];
+    protected $allowedFields      = ['id_pj', 'nama_pj', 'contact'];
     protected $useTimestamps      = false;
     protected $createdField       = 'tanggal_post';
     protected $updatedField       = 'tanggal';
@@ -52,13 +52,13 @@ class pj_model extends Model
     }
 
     // read
-    public function read($slug_pj)
-    {
-        $builder = $this->db->table('pj');
-        $builder->where('slug_pj', $slug_pj);
-        $builder->orderBy('pj.id_pj', 'DESC');
-        $query = $builder->get();
+    // public function read($slug_pj)
+    // {
+    //     $builder = $this->db->table('pj');
+    //     $builder->where('slug_pj', $slug_pj);
+    //     $builder->orderBy('pj.id_pj', 'DESC');
+    //     $query = $builder->get();
 
-        return $query->getRowArray();
-    }
+    //     return $query->getRowArray();
+    // }
 }

@@ -14,7 +14,7 @@
 		foreach ($pj as $pj) { ?>
 			<tr>
 				<td><?= $no ?></td>
-				<td><?= $pj['nama'] ?></td>
+				<td><?= $pj['nama_pj'] ?></td>
 				<td><?= $pj['contact'] ?>
 
 				</td>
