@@ -1,12 +1,3 @@
-<!-- <p>
-	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-		<i class="fa fa-plus"></i> Tambah Baru
-	</button>
-</p>
-<?= form_open(base_url('admin/building'));
-echo csrf_field();
-?> -->
-
 <form action="<?= base_url('admin/building/tambah') ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	<?= csrf_field();
 	?>

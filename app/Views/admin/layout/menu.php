@@ -180,6 +180,13 @@ $session     = \Config\Services::session();
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="<?= base_url('admin/report') ?>" class="nav-link">
+            <i class="nav-icon fas fa-building"></i>
+            <p>Laporan</p>
+          </a>
+        </li>
+
         <!-- pengguna -->
         <li class="nav-item">
           <a href="<?= base_url('admin/client') ?>" class="nav-link">

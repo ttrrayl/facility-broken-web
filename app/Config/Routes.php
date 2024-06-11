@@ -32,6 +32,24 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Login::index');
+$routes->post('/api/report', 'Admin\Report::create');
+$routes->get('/api/report/(:num)', 'Admin\Report::getReport/$1');
+$routes->put('/api/report/(:num)', 'Admin\Report::edit/$1');
+$routes->delete('/api/report/(:num)', 'Admin\Report::delete/$1');
+$routes->get('/api/report', 'Admin\Report::listReports');
+$routes->get('/api/building', 'Admin\Report::listBuilding');
+$routes->get('/api/classes', 'Admin\Report::listClasses');
+$routes->get('/api/detail_facil', 'Admin\Report::listDetailFacil');
+
+$routes->group("api", function ($routes) {
+    $routes->post("register", "StudentRegister::index");
+    $routes->post("login", "StudentLogin::index");
+    $routes->get(
+        "register",
+        "User::index",
+        ['filter' => 'authFilter']
+    );
+});
 
 /*
  * --------------------------------------------------------------------

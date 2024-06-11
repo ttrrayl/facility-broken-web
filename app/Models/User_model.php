@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use CodeIgniter\Entity\Entity;
 use CodeIgniter\Model;
+use Config\App;
 
 class User_model extends Model
 {
     protected $table              = 'users';
     protected $primaryKey         = 'id_user';
-    protected $returnType         = 'array';
+    // protected $returnType         = 'array';
     protected $useSoftDeletes     = false;
-    protected $allowedFields      = ['id_user', 'nama', 'email', 'username', 'password', 'akses_level', 'kode_rahasia', 'gambar', 'keterangan', 'tanggal_post'];
+    protected $allowedFields      = ['id_user', 'nama', 'email', 'username', 'password', 'akses_level', 'gambar', 'tanggal_post'];
     protected $useTimestamps      = false;
     protected $createdField       = 'created_at';
     protected $updatedField       = 'updated_at';
@@ -18,13 +20,16 @@ class User_model extends Model
     protected $validationRules    = [];
     protected $validationMessages = [];
     protected $skipValidation     = false;
+    protected $returnType         = 'App/Entities/User';
 
     // login
     public function login($username, $password)
     {
         return $this->asArray()
-            ->where(['username' => $username,
-                'password'      => sha1($password), ])
+            ->where([
+                'username' => $username,
+                'password'      => sha1($password),
+            ])
             ->first();
     }
 
