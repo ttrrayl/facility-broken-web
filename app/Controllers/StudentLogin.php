@@ -28,7 +28,11 @@ class StudentLogin extends BaseController
         $pwd_verify = password_verify($password, $user['password']);
 
         if (!$pwd_verify) {
-            return $this->respond(['error' => 'Invalid username or password.'], 401);
+            $response = [
+                'error' => true,
+                'message' => 'Invalid username or password.'
+            ];
+            return $this->respond($response, 401);
         }
 
         $key = getenv('JWT_SECRET');
@@ -47,8 +51,12 @@ class StudentLogin extends BaseController
         $token = JWT::encode($payload, $key, 'HS256');
 
         $response = [
+            'error' => false,
             'message' => 'Login Succesful',
-            'token' => $token
+            'loginResult' => [
+                'token' => $token
+            ]
+
         ];
 
         return $this->respond($response, 200);

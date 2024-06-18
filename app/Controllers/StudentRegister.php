@@ -29,11 +29,15 @@ class StudentRegister extends BaseController
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $model->save($data);
-
-            return $this->respond(['message' => 'Registered Successfully'], 200);
+            $response = [
+                'error' => false,
+                'message' => 'Registered Successfully'
+            ];
+            return $this->respond($response, 200);
         } else {
             $response = [
-                'errors' => $this->validator->getErrors(),
+                'error' => true,
+                'err_message' => $this->validator->getErrors(),
                 'message' => 'Invalid Inputs'
             ];
             return $this->fail($response, 409);
