@@ -11,38 +11,26 @@ Website ini dikembangkan dengan beberapa spesifikasi:
 
 1. Halaman Beranda/Homepage
 2. Banner slider
-3. Halaman berita dan detailnya
-4. Halaman layanan
+3. Halaman data gedung
+4. Halaman data kelas
 5. Halaman profile
-6. Halaman staff dan team
-7. Halaman galeri gambar
-8. Halaman galeri video
-9. Halaman client
-10. Halaman file download
-11. Halaman kontak
+6. Halaman data kategori fasilitas
+7. Halaman fasilitas
+8. Halaman data penanggung jawab gedung
+9. Halaman laporan
+10. Halaman pengguna
 
 ## HALAMAN BACK END:
 1. Login dan logout
 2. Halaman update profile dan ganti password
 3. Halaman Dashboard
-4. Halaman kelola berita dan kategorinya
-5. Halaman kelola layanan dan profil
-6. Halaman kelola staff and team
-7. Halaman kelola client
-8. Halaman kelola galeri gambar dan kategorinya
-9. Halaman kelola upload/download file dan kategorinya
-10. Halaman kelola video youtube
-11. Halaman kelola pengguna
-12. Halaman kelola konfigurasi website, logo dan icon
-13. Halaman panduan website
-14. Dan fitur lainnya
-
-## Mengakses Halaman Website dan Login ke Admin
-1. Buka browser Anda
-2. Ketik alamat http://websitekamu.com
-3. Untuk Login ke halaman Back End, silakan buka http://websitekamu.com/login
-4. Username: javawebmedia
-5. Password: javawebmedia
+4. Halaman kelola data gedung
+5. Halaman kelola data kelas
+6. Halaman kelola data kategori fasilitas
+7. Halaman kelola fasilitas
+8. Halaman kelola data penanggung jawab gedung
+9. Halaman kelola laporan
+10. Halaman kelola pengguna
 
 # CodeIgniter 4 Framework
 
@@ -60,25 +48,9 @@ More information about the plans for version 4 can be found in [the announcement
 The user guide corresponding to this version of the framework can be found
 [here](https://codeigniter4.github.io/userguide/).
 
-## Repository Management
-
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
 ## Server Requirements
 
 PHP version 7.3 or higher is required, with the following extensions installed:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
