@@ -23,7 +23,8 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/kumandra/';
+    // public $baseURL = 'https://kumandra.unand.dev';
+    public $baseURL = 'http://localhost/kumandra';
 
     /**
      * --------------------------------------------------------------------------

@@ -14,7 +14,7 @@
 		<div class="col-md-3">
 			<select name="id_facilities" class="form-control">
 				<?php foreach ($facilities as $facilities) { ?>
-					<option value="<?= $facilities['id_facilities'] ?>" <?php if ($facilities['id_facilities'] === $facilities['id_facilities']) {
+					<option value="<?= $facilities['id_facilities'] ?>" <?php if ($detail_facilities['id_facilities'] === $facilities['id_facilities']) {
 																			echo 'selected';
 																		} ?>>
 						<?= $facilities['type_facilities'] ?>
@@ -25,12 +25,14 @@
 		</div>
 	</div>
 
+
+
 	<div class="form-group row">
 		<label class="col-md-2">Lokasi Fasilitas</label>
 		<div class="col-md-3">
 			<select name="id_classes" class="form-control">
 				<?php foreach ($classes as $classes) { ?>
-					<option value="<?= $classes['id_classes'] ?>" <?php if ($classes['id_classes'] === $classes['id_classes']) {
+					<option value="<?= $classes['id_classes'] ?>" <?php if ($detail_facilities['id_classes'] === $classes['id_classes']) {
 																		echo 'selected';
 																	} ?>>
 						<?= $classes['nama_classes'] ?>

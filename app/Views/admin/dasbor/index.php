@@ -12,15 +12,15 @@ $m_dasbor = new Dasbor_model();
 
 <!-- Info boxes -->
 <div class="row">
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4">
     <div class="info-box">
-      <span class="info-box-icon bg-info elevation-1"><i class="fas fa-newspaper"></i></span>
+      <span class="info-box-icon bg-info elevation-1"><i class="fas fa-building"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Berita/Profil/Layanan</span>
+        <span class="info-box-text">Gedung Perkuliahan</span>
         <span class="info-box-number">
-          <?= angka($m_dasbor->berita()) ?>
-          <small>Konten</small>
+          <?= angka($m_dasbor->nama_building()) ?>
+          <!-- <small>Konten</small> -->
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -28,13 +28,13 @@ $m_dasbor = new Dasbor_model();
     <!-- /.info-box -->
   </div>
   <!-- /.col -->
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4">
     <div class="info-box mb-3">
-      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-tags"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Clients</span>
-        <span class="info-box-number"><?= angka($m_dasbor->client()) ?></span>
+        <span class="info-box-text">PJ Gedung</span>
+        <span class="info-box-number"><?= angka($m_dasbor->pj()) ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -42,29 +42,13 @@ $m_dasbor = new Dasbor_model();
   </div>
   <!-- /.col -->
 
-  <!-- fix for small devices only -->
-  <div class="clearfix hidden-md-up"></div>
-
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4">
     <div class="info-box mb-3">
-      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Staff</span>
-        <span class="info-box-number"><?= angka($m_dasbor->staff()) ?></span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-lock"></i></span>
-
-      <div class="info-box-content">
-        <span class="info-box-text">Pengguna Website</span>
-        <span class="info-box-number"><?= angka($m_dasbor->user()) ?></span>
+        <span class="info-box-text">Ruang Kelas</span>
+        <span class="info-box-number"><?= angka($m_dasbor->classes()) ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -72,68 +56,60 @@ $m_dasbor = new Dasbor_model();
   </div>
   <!-- /.col -->
 </div>
-<!-- /.row -->
 
+<!-- fix for small devices only -->
 <div class="row">
-  <!-- /.col -->
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-download"></i></span>
-
-      <div class="info-box-content">
-        <span class="info-box-text">File Download</span>
-        <span class="info-box-number"><?= angka($m_dasbor->download()) ?></span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box">
-      <span class="info-box-icon bg-info elevation-1"><i class="fas fa-images"></i></span>
-
-      <div class="info-box-content">
-        <span class="info-box-text">Galeri &amp; Banner</span>
-        <span class="info-box-number">
-          <?= angka($m_dasbor->galeri()) ?>
-          <small>Konten</small>
-        </span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon bg-danger elevation-1"><i class="fab fa-youtube"></i></span>
-
-      <div class="info-box-content">
-        <span class="info-box-text">Video Youtube</span>
-        <span class="info-box-number"><?= angka($m_dasbor->video()) ?></span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
-
-  <!-- fix for small devices only -->
   <div class="clearfix hidden-md-up"></div>
 
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4">
     <div class="info-box mb-3">
-      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Kategori Berita</span>
-        <span class="info-box-number"><?= angka($m_dasbor->kategori()) ?></span>
+        <span class="info-box-text">Fasilitas</span>
+        <span class="info-box-number"><?= angka($m_dasbor->facilities()) ?></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- /.row -->
+
+
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-building"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Total Laporan Masuk</span>
+        <span class="info-box-number"><?= angka($m_dasbor->report()) ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>
     <!-- /.info-box -->
   </div>
 
+
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-building"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Total User</span>
+        <span class="info-box-number"><?= angka($m_dasbor->student()) ?></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
 </div>
+<!-- /.info-box -->
+
+
+
+
+
 <!-- /.row -->

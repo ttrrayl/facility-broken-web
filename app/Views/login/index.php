@@ -2,8 +2,7 @@
 
 use App\Models\Konfigurasi_model;
 
-$konfigurasi = new Konfigurasi_model();
-$site        = $konfigurasi->listing();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +13,7 @@ $site        = $konfigurasi->listing();
 
   <title><?= $title ?></title>
   <meta content="<?= strip_tags($description) ?>" name="description">
-  <!-- Favicons -->
-  <!-- <link href="<?= base_url('assets/upload/image/' . $site['icon']) ?>" rel="icon">
-  <link href="<?= base_url('assets/upload/image/' . $site['icon']) ?>" rel="apple-touch-icon"> -->
+
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

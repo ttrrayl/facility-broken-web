@@ -5,9 +5,11 @@ echo csrf_field();
 <div class="form-group row">
 	<label class="col-3">Jenis Fasilitas</label>
 	<div class="col-9">
-		<input type="text" name="type_facilities" class="form-control" placeholder="Jenis Fasilitas" value="<?= $facilities['type_facilities'] ?>" required>
+		<input type="text" name="type_facilities" class="form-control" value="<?= $facilities['type_facilities'] ?>" required>
 	</div>
 </div>
+
+
 
 
 <div class="form-group row">

@@ -1,161 +1,164 @@
-<?php use App\Models\Konfigurasi_model;
+<?php
+
+use App\Models\Konfigurasi_model;
 
 $session     = \Config\Services::session();
-$konfigurasi = new Konfigurasi_model();
-$site        = $konfigurasi->listing();
+
 ?>
 <?php $sek = date('Y');
 $awal      = $sek - 100;
 ?>
 <script>
-  $( ".datepicker" ).datepicker({
+  $(".datepicker").datepicker({
     inline: true,
     changeYear: true,
     changeMonth: true,
     dateFormat: "dd-mm-yy",
-    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2; echo $tahundepan; ?>"
+    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2;
+                              echo $tahundepan; ?>"
   });
 
-  $( ".tanggal" ).datepicker({
+  $(".tanggal").datepicker({
     inline: true,
     changeYear: true,
     changeMonth: true,
     dateFormat: "dd-mm-yy",
-    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2; echo $tahundepan; ?>"
+    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2;
+                              echo $tahundepan; ?>"
   });
 
-  $( ".tanggalan" ).datepicker({
+  $(".tanggalan").datepicker({
     inline: true,
     changeYear: true,
     changeMonth: true,
     dateFormat: "dd-mm-yy",
-    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2; echo $tahundepan; ?>"
+    yearRange: "<?= $awal ?>:<?php $tahundepan = date('Y') + 2;
+                              echo $tahundepan; ?>"
   });
-
 </script>
 <!-- SWEETALERT -->
 <?php if ($session->getFlashdata('sukses')) { ?>
-<script>
-  swal("Berhasil", "<?= $session->getFlashdata('sukses'); ?>","success")
-</script>
+  <script>
+    swal("Berhasil", "<?= $session->getFlashdata('sukses'); ?>", "success")
+  </script>
 <?php } ?>
 
 <?php if (isset($error)) { ?>
-<script>
-  swal("Oops...", "<?= strip_tags($error); ?>","warning")
-</script>
+  <script>
+    swal("Oops...", "<?= strip_tags($error); ?>", "warning")
+  </script>
 <?php } ?>
 
 <?php if ($session->getFlashdata('warning')) { ?>
-<script>
-  swal("Oops...", "<?= $session->getFlashdata('warning'); ?>","warning")
-</script>
+  <script>
+    swal("Oops...", "<?= $session->getFlashdata('warning'); ?>", "warning")
+  </script>
 <?php } ?>
 
 <script>
-// Sweet alert
-function confirmation(ev) {
-ev.preventDefault();
-var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
-console.log(urlToRedirect); // verify if this is the right URL
-swal({
-  title: "Yakin ingin menghapus data ini?",
-  text: "Data yang sudah dihapus tidak dapat dikembalikan",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
-  if (willDelete) {
-    // Proses ke URL
-    window.location.href = urlToRedirect;
+  // Sweet alert
+  function confirmation(ev) {
+    ev.preventDefault();
+    var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+    console.log(urlToRedirect); // verify if this is the right URL
+    swal({
+        title: "Yakin ingin menghapus data ini?",
+        text: "Data yang sudah dihapus tidak dapat dikembalikan",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+        if (willDelete) {
+          // Proses ke URL
+          window.location.href = urlToRedirect;
+        }
+      });
   }
-});
-}
 
-// Kirim ulang
-function kirim(ev) {
-ev.preventDefault();
-var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
-console.log(urlToRedirect); // verify if this is the right URL
-swal({
-  title: "Yakin Ingin Mengirim Surat Ini?",
-  text: "Pengiriman Surat Sebaiknya Kurang dari 200 Kali/jam agar tidak terkena Blokir Server. Klik CANCEL untuk membatalkan. Klik OK untuk mengirim surat.",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
-  if (willDelete) {
-    // Proses ke URL
-    window.location.href = urlToRedirect;
+  // Kirim ulang
+  function kirim(ev) {
+    ev.preventDefault();
+    var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+    console.log(urlToRedirect); // verify if this is the right URL
+    swal({
+        title: "Yakin Ingin Mengirim Surat Ini?",
+        text: "Pengiriman Surat Sebaiknya Kurang dari 200 Kali/jam agar tidak terkena Blokir Server. Klik CANCEL untuk membatalkan. Klik OK untuk mengirim surat.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+        if (willDelete) {
+          // Proses ke URL
+          window.location.href = urlToRedirect;
+        }
+      });
   }
-});
-}
-// Akses
-// Sweet alert
-function akses(ev) {
-ev.preventDefault();
-var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
-console.log(urlToRedirect); // verify if this is the right URL
-swal({
-  title: "Yakin ingin memberi akses?",
-  text: "Data yang diberi akses akan bisa login",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
-  if (willDelete) {
-    // Proses ke URL
-    window.location.href = urlToRedirect;
+  // Akses
+  // Sweet alert
+  function akses(ev) {
+    ev.preventDefault();
+    var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+    console.log(urlToRedirect); // verify if this is the right URL
+    swal({
+        title: "Yakin ingin memberi akses?",
+        text: "Data yang diberi akses akan bisa login",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+        if (willDelete) {
+          // Proses ke URL
+          window.location.href = urlToRedirect;
+        }
+      });
   }
-});
-}
 
-// Tinymce
+  // Tinymce
 
-tinymce.init({
-  selector: '.konten',
-  menubar: true,
-  plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount'
-  ],
-  toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-});
+  tinymce.init({
+    selector: '.konten',
+    menubar: true,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+  });
 </script>
 </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+  <div class="float-right d-none d-sm-block">
+    <b>Version</b> 3.1.0
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.1.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+  <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -177,23 +180,23 @@ tinymce.init({
 <script src="<?= base_url() ?>/assets/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <script>
-$(document).ready(function(){
+  $(document).ready(function() {
     $('input.jam').timepicker({
-        timeFormat: 'HH:mm:ss',
-        // year, month, day and seconds are not important
-        minTime: new Date(0, 0, 0, 8, 0, 0),
-        maxTime: new Date(0, 0, 0, 15, 0, 0),
-        // time entries start being generated at 6AM but the plugin
-        // shows only those within the [minTime, maxTime] interval
-        startHour: 6,
-        // the value of the first item in the dropdown, when the input
-        // field is empty. This overrides the startHour and startMinute
-        // options
-        startTime: new Date(0, 0, 0, 8, 20, 0),
-        // items in the dropdown are separated by at interval minutes
-        interval: 10
+      timeFormat: 'HH:mm:ss',
+      // year, month, day and seconds are not important
+      minTime: new Date(0, 0, 0, 8, 0, 0),
+      maxTime: new Date(0, 0, 0, 15, 0, 0),
+      // time entries start being generated at 6AM but the plugin
+      // shows only those within the [minTime, maxTime] interval
+      startHour: 6,
+      // the value of the first item in the dropdown, when the input
+      // field is empty. This overrides the startHour and startMinute
+      // options
+      startTime: new Date(0, 0, 0, 8, 20, 0),
+      // items in the dropdown are separated by at interval minutes
+      interval: 10
     });
-});
+  });
 </script>
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>/assets/admin/dist/js/adminlte.min.js"></script>
@@ -203,12 +206,15 @@ $(document).ready(function(){
 <script src="<?= base_url() ?>/assets/admin/dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
+  $(function() {
     $("#example1").DataTable({
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
       "responsive": true,
       "paging": true,
-      "lengthMenu": [[100, 250, 500, -1], [100, 250, 500, "All"]],
+      "lengthMenu": [
+        [100, 250, 500, -1],
+        [100, 250, 500, "All"]
+      ],
       "lengthChange": true,
       "autoWidth": false
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
@@ -223,16 +229,16 @@ $(document).ready(function(){
     });
   });
 
-  $(function () {
+  $(function() {
     // Summernote
     $('.summernote').summernote({
-      height: 100,                 // set editor height
-      minHeight: null,             // set minimum height of editor
-      maxHeight: null,             // set maximum height of editor
+      height: 100, // set editor height
+      minHeight: null, // set minimum height of editor
+      maxHeight: null, // set maximum height of editor
     })
   })
   // tanggal dan select
-  $(function () {
+  $(function() {
     //Initialize Select2 Elements
     $('.select2').select2()
 
@@ -242,19 +248,27 @@ $(document).ready(function(){
     })
 
     //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    $('#datemask').inputmask('dd/mm/yyyy', {
+      'placeholder': 'dd/mm/yyyy'
+    })
     //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    $('#datemask2').inputmask('mm/dd/yyyy', {
+      'placeholder': 'mm/dd/yyyy'
+    })
     //Money Euro
     $('[data-mask]').inputmask()
 
     //Date picker
     $('#reservationdate').datetimepicker({
-        format: 'L'
+      format: 'L'
     });
 
     //Date and time picker
-    $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+    $('#reservationdatetime').datetimepicker({
+      icons: {
+        time: 'far fa-clock'
+      }
+    });
 
     //Date range picker
     $('#reservation').daterangepicker()
@@ -267,20 +281,19 @@ $(document).ready(function(){
       }
     })
     //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+    $('#daterange-btn').daterangepicker({
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         },
         startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
+        endDate: moment()
       },
-      function (start, end) {
+      function(start, end) {
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
       }
     )
@@ -302,13 +315,13 @@ $(document).ready(function(){
       $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
     })
 
-    $("input[data-bootstrap-switch]").each(function(){
+    $("input[data-bootstrap-switch]").each(function() {
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
 
   })
   // BS-Stepper Init
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function() {
     window.stepper = new Stepper(document.querySelector('.bs-stepper'))
   })
 
@@ -334,7 +347,9 @@ $(document).ready(function(){
 
   myDropzone.on("addedfile", function(file) {
     // Hookup the start button
-    file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file) }
+    file.previewElement.querySelector(".start").onclick = function() {
+      myDropzone.enqueueFile(file)
+    }
   })
 
   // Update the total progress bar
@@ -366,4 +381,5 @@ $(document).ready(function(){
   // DropzoneJS Demo Code End
 </script>
 </body>
+
 </html>

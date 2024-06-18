@@ -6,7 +6,6 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Controllers\BaseController;
 use App\Models\StudentModel;
-use Firebase\JWT\JWT;
 
 class User extends BaseController
 {

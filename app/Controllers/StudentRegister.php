@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Controllers\BaseController;
-use App\Models\StudentModel;
+use App\Models\Students_model;
 
 class StudentRegister extends BaseController
 {
@@ -22,7 +22,7 @@ class StudentRegister extends BaseController
 
 
         if ($this->validate($rules)) {
-            $model = new StudentModel();
+            $model = new Students_model();
             $data = [
                 'email'    => $this->request->getVar('email'),
                 'username'    => $this->request->getVar('username'),

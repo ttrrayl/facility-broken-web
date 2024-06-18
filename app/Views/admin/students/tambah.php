@@ -3,7 +3,7 @@
 		<i class="fa fa-plus"></i> Tambah Baru
 	</button>
 </p>
-<?= form_open(base_url('admin/kategori_download'));
+<?= form_open(base_url('admin/pj'));
 echo csrf_field();
 ?>
 <div class="modal fade" id="modal-default">
@@ -18,18 +18,21 @@ echo csrf_field();
 			<div class="modal-body">
 
 				<div class="form-group row">
-					<label class="col-3">Nama Kategori Download</label>
+					<label class="col-3">Nama PJ</label>
 					<div class="col-9">
-						<input type="text" name="nama_kategori_download" class="form-control" placeholder="Nama kategori_download" value="<?= set_value('nama_kategori_download') ?>" required>
+						<input type="text" name="nama_pj" class="form-control" placeholder="Nama pj" value="<?= set_value('nama_pj') ?>" required>
 					</div>
 				</div>
 
 				<div class="form-group row">
-					<label class="col-3">Nomor urut Kategori Download</label>
+					<label class="col-3">Contact</label>
 					<div class="col-9">
-						<input type="number" name="urutan" class="form-control" placeholder="Nomor urut kategori_download" value="<?= set_value('urutan') ?>" required>
+						<input type="text" name="contact" class="form-control" placeholder="Contact" value="<?= set_value('contact') ?>" required>
+						<small class="text-secondary"><span class="text-warning">Gunakan format 08xxxxxxx</span></small>
 					</div>
 				</div>
+
+
 
 			</div>
 			<div class="modal-footer justify-content-between">

@@ -69,7 +69,7 @@ class Classes extends BaseController
         if ($this->request->getMethod() === 'post' && $this->validate(
             [
 
-                'nama_building' => 'required'
+                'nama_classes' => 'required'
             ]
         )) {
 

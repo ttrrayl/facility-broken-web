@@ -12,9 +12,9 @@
 	<div class="form-group row">
 		<label class="col-md-2">Nama Gedung Perkuliahan</label>
 		<div class="col-md-3">
-			<select name="id_pj" class="form-control">
+			<select name="id_building" class="form-control">
 				<?php foreach ($building as $building) { ?>
-					<option value="<?= $building['id_building'] ?>" <?php if ($building['id_building'] === $building['id_building']) {
+					<option value="<?= $building['id_building'] ?>" <?php if ($classes['id_building'] === $building['id_building']) {
 																		echo 'selected';
 																	} ?>>
 						<?= $building['nama_building'] ?>

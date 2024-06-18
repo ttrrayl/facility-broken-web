@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class StudentModel extends Model
+class Students_model extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'students';
@@ -39,4 +39,35 @@ class StudentModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function listing()
+    {
+        $builder = $this->db->table('students');
+        $builder->orderBy('students.id', 'DESC');
+        $query = $builder->get();
+
+        return $query->getResultArray();
+    }
+
+    // total
+    public function total()
+    {
+        $builder = $this->db->table('students');
+        $builder->select('COUNT(*) AS total');
+        $builder->orderBy('students.id', 'DESC');
+        $query = $builder->get();
+
+        return $query->getRowArray();
+    }
+
+    // detail
+    public function detail($id)
+    {
+        $builder = $this->db->table('students');
+        $builder->where('id', $id);
+        $builder->orderBy('students.id', 'DESC');
+        $query = $builder->get();
+
+        return $query->getRowArray();
+    }
 }

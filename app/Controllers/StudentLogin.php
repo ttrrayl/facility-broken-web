@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
-use App\Models\StudentModel;
+use App\Models\Students_model;
 use Firebase\JWT\JWT;
 
 class StudentLogin extends BaseController
@@ -14,7 +14,7 @@ class StudentLogin extends BaseController
 
     public function index()
     {
-        $studentModel = new StudentModel();
+        $studentModel = new Students_model();
 
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');

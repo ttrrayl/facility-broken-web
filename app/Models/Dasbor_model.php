@@ -6,44 +6,44 @@ use CodeIgniter\Model;
 
 class Dasbor_model extends Model
 {
-    // berita
-    public function berita()
+    //gedung
+    public function nama_building()
     {
-        $builder = $this->db->table('berita');
+        $builder = $this->db->table('building');
         $query   = $builder->get();
 
         return $query->getNumRows();
     }
 
-    // user
-    public function user()
+    //mahasiswa
+    public function student()
     {
-        $builder = $this->db->table('users');
+        $builder = $this->db->table('students');
         $query   = $builder->get();
 
         return $query->getNumRows();
     }
 
-    // client
-    public function client()
+    // kelas
+    public function classes()
     {
-        $builder = $this->db->table('client');
+        $builder = $this->db->table('classes');
         $query   = $builder->get();
 
         return $query->getNumRows();
     }
 
-    // galeri
-    public function galeri()
+    // fasilitas
+    public function facilities()
     {
-        $builder = $this->db->table('galeri');
+        $builder = $this->db->table('detail_facilities');
         $query   = $builder->get();
 
         return $query->getNumRows();
     }
 
-    // video
-    public function video()
+    // pj
+    public function pj()
     {
         $builder = $this->db->table('pj');
         $query   = $builder->get();
@@ -51,46 +51,10 @@ class Dasbor_model extends Model
         return $query->getNumRows();
     }
 
-    // download
-    public function download()
+    // laporan
+    public function report()
     {
-        $builder = $this->db->table('download');
-        $query   = $builder->get();
-
-        return $query->getNumRows();
-    }
-
-    // staff
-    public function staff()
-    {
-        $builder = $this->db->table('staff');
-        $query   = $builder->get();
-
-        return $query->getNumRows();
-    }
-
-    // kategori_download
-    public function kategori_download()
-    {
-        $builder = $this->db->table('kategori_download');
-        $query   = $builder->get();
-
-        return $query->getNumRows();
-    }
-
-    // kategori
-    public function kategori()
-    {
-        $builder = $this->db->table('kategori');
-        $query   = $builder->get();
-
-        return $query->getNumRows();
-    }
-
-    // kategori_staff
-    public function kategori_staff()
-    {
-        $builder = $this->db->table('kategori_staff');
+        $builder = $this->db->table('report');
         $query   = $builder->get();
 
         return $query->getNumRows();
